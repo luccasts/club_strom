@@ -5,18 +5,28 @@
 }
 
 :root {
+  --bg-gradient: linear-gradient(to bottom, #000, #1a1a1a, #343434);
   --bg-primary-color: ;
   --bg-secondary-color: ;
   --font-size-subtitle: ;
 
+  --font-size-nav-link: 16px;
+
+  --color-nav-link: #ffffff;
+  --hr-color: #c49c51;
   --font-size-title: clamp(2rem, 4vw + 1rem, 3rem);
   --font-size-subtitle: clamp(1.25rem, 2vw + 0.5rem, 2rem);
   --font-size-text: clamp(1rem, 1vw + 0.25rem, 1.125rem);
   --max-width: 1000px;
 }
+
+/* STYLES TAGs*/
+
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: var(--bg-gradient);
 }
+
 h1,
 h2 {
   font-size: var(--font-size-title);
@@ -29,9 +39,21 @@ body,
 ul {
   list-style: none;
 }
+body main {
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 0;
+}
+/* CLASSES GLOBAIS*/
 .container {
   max-width: var(--max-width);
+}
+.container-margin {
   margin: 0 auto;
+}
+
+.color-hr {
+  border: 1px solid var(--hr-color);
 }
 .body-flex {
   display: flex;
@@ -40,15 +62,73 @@ ul {
   gap: 32px;
 }
 
-body main {
-  flex-grow: 1;
-  flex-shrink: 1;
-  flex-basis: 0;
-}
-
+/*BARRA DE NAVEGAÇÃO*/
 #nav-bar {
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: space-around;
   gap: 16px;
+}
+#nav-bar a {
+  color: var(--color-nav-link);
+  text-decoration: none;
+  display: inline-block;
+  position: relative;
+  text-transform: uppercase;
+  font-size: var(--font-size-nav-link);
+}
+
+.nav-a-hover::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: var(--hr-color);
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+.nav-a-hover:hover::after {
+  transform: scaleX(1) scaleY(1.05);
+  transform-origin: bottom left;
+}
+/*PAG INICIO*/
+#inicio {
+  margin: 0 2rem;
+}
+
+#bg-inicio {
+  background: url("../img/place-holder-club.png") no-repeat center center;
+  background-size: cover;
+  background-clip: content-box;
+
+  min-height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 1rem;
+  width: 100%;
+  z-index: -5;
+  position: relative;
+}
+#bg-inicio::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: -1;
+  border-radius: 1rem;
+}
+
+#bg-inicio #logo-club-branco {
+  position: relative;
+  z-index: 1;
+}
+#logo-club-branco {
+  max-width: 500px;
+  width: 100%;
 }
