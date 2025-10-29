@@ -11,9 +11,12 @@
   --font-size-subtitle: ;
 
   --font-size-nav-link: 16px;
+  --primary-text-color: #fff;
+  --contato-text-color: var(--primary-text-color);
 
   --color-nav-link: #ffffff;
   --color-footer-contatos: #ffff;
+
   --hr-color: #c49c51;
   --font-size-title: clamp(2rem, 4vw + 1rem, 3rem);
   --font-size-subtitle: clamp(1.25rem, 2vw + 0.5rem, 2rem);
@@ -245,6 +248,60 @@ body main {
   backdrop-filter: blur(2px);
   border-radius: 8px;
 }
+/*CONTATO*/
+#contato {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+#contato-titulo {
+  text-transform: uppercase;
+  color: var(--contato-text-color);
+}
+
+.logo-contato {
+  border-radius: 400px 400px 400px 400px;
+  font-size: 2rem;
+  color: white;
+  background-color: black;
+  padding: 10px;
+  cursor: pointer;
+  transition: transform 0.15s, color 0.15s, background-color 0.15s;
+}
+
+.logo-contato:hover {
+  transform: scale(1.02);
+  color: black;
+  background-color: white;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+}
+#contato-flex-logos {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+#contato-container-wpp a,
+#contato-container-instagram a {
+  display: flex;
+  text-decoration: none;
+  align-items: center;
+  gap: 8px;
+  color: var(--color-footer-contatos);
+  font-weight: bold;
+}
+
+#contato-container-wpp a p,
+#contato-container-instagram a p {
+  transition: transform 15ms;
+}
+#contato-container-wpp a p:hover,
+#contato-container-instagram a p:hover {
+  transform: scale(1.02);
+  text-decoration: underline;
+}
 
 /*FOOTER */
 #footer-flex {
@@ -257,41 +314,4 @@ body main {
 #footer-logo {
   max-width: 300px;
   width: 100%;
-}
-.logo-footer {
-  border-radius: 400px 400px 400px 400px;
-  font-size: 2rem;
-  color: white;
-  background-color: black;
-  padding: 10px;
-  cursor: pointer;
-  transition: transform 15ms;
-}
-
-.logo-footer:hover {
-  transform: scale(1.02);
-}
-#footer-flex-logos {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-#container-wpp a,
-#container-instagram a {
-  display: flex;
-  text-decoration: none;
-  align-items: center;
-  gap: 8px;
-  color: var(--color-footer-contatos);
-  font-weight: bold;
-}
-
-#container-wpp a p,
-#container-instagram a p {
-  transition: transform 15ms;
-}
-#container-wpp a p:hover,
-#container-instagram a p:hover {
-  transform: scale(1.02);
-  text-decoration: underline;
 }
