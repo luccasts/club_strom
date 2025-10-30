@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+/*coloquei outra fonte ai*/
 * {
   margin: 0;
   padding: 0;
@@ -104,7 +106,7 @@ main {
   transform-origin: bottom left;
 }
 
-/*PAGINA INICIO*/
+
 #inicio {
   margin: 0 2rem;
 }
@@ -123,7 +125,7 @@ main {
   width: 100%;
   z-index: -5;
   position: relative;
-  margin-bottom: 50px;
+  margin-bottom: 30px; 
 }
 #bg-inicio::before {
   content: "";
@@ -144,7 +146,7 @@ main {
 }
 .logo-zap-body {
   width: 220px;
-  margin: 1.5rem auto;
+  margin: 6px auto; 
   background-color: #c49c51;
   padding: 8px 12px;
   border-radius: 30px;
@@ -177,19 +179,70 @@ main {
   transform-origin: bottom left;
 }
 .borda-body {
-  text-align: center;
-  padding: 2px 0;
+  -webkit-overflow-scrolling: touch;
+  padding: 0;                            
   margin: 0;
 }
+
+.borda {
+  display: flex;
+  flex-wrap: nowrap;                     
+  align-items: center;
+  justify-content: center;               
+  gap: 6px;                            
+  padding: 6px 8px;
+}
+
 .borda img {
-  max-width: 200px;
-  padding: 1px;
+  flex: 0 0 auto;                        
+  width: auto;
+  height: clamp(160px, 4.2vw, 48px);      
+  display: block;
+  margin: 0;
+  pointer-events: none;
+  z-index: 100;
+  margin-top: -150px;
+  margin-bottom: -80px;
+}
+
+
+.borda-body::-webkit-scrollbar { height: 8px; }
+.borda-body::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.2); border-radius: 8px; }
+
+/*vou ajeitar ainda essa parte*/
+.texto-fiel-container {
+  width: 100%;
+  max-width: 700px;          
+  margin: 0 auto;             
+  display: flex;
+  align-items: center;       
+  justify-content: center;    
+  text-align: center;        
+  padding: 1rem;              
+  font-family: Jacques Francois;
+}
+
+.texto-fiel p {
+  margin: 0;
+  font-size: clamp(1.1rem, 2.6vw, 1.6rem); 
+  line-height: 1.4;
+  font-weight: 800;
+  color: #ffffff93;
+  letter-spacing: 0.2px;
+}
+
+
+.texto-fiel-container.center-vertical {
+  min-height: 140px; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #servicos {
   padding: 4rem 1rem;
   text-align: center;
-  color: #fff;
+  color: #ffffff5e;
   max-width: var(--max-width);
   margin: 0 auto;
   grid-column: 1fr;
@@ -203,6 +256,8 @@ main {
   margin: 1px auto;
   padding: 0.5rem 1rem;
   position: relative;
+
+  
 }
 
 .servicos-gallery img {
@@ -211,23 +266,16 @@ main {
   object-fit: cover;
   display: block;
   border-radius: 12px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0);
   transition: transform 0.25s ease, filter 0.25s ease;
 
-  -webkit-mask-image: linear-gradient(
-    to right,
-    transparent 0%,
-    black 12%,
-    black 88%,
-    transparent 100%
-  );
-  mask-image: linear-gradient(
-    to right,
-    transparent 0%,
-    black 12%,
-    black 88%,
-    transparent 100%
-  );
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, black 8%, black 92%, transparent 100%);
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+
+  mask-image: linear-gradient(90deg, transparent 0%, rgb(0, 0, 0) 8%, black 92%, transparent 100%);
+  mask-repeat: no-repeat;
+  mask-size: 100% 100%;
 }
 
 .servicos-gallery img:hover {
@@ -253,11 +301,11 @@ main {
   pointer-events: none;
   text-align: center;
   white-space: nowrap;
-  background: rgba(0, 0, 0, 0.35);
-  backdrop-filter: blur(2px);
+  background: rgba(0, 0, 0, 0);
+  backdrop-filter: blur(1px);
   border-radius: 8px;
 }
-/*CONTATO*/
+
 #contato {
   display: flex;
   justify-content: center;
@@ -314,7 +362,6 @@ main {
   transform: scale(1.02);
 }
 
-/*FOOTER */
 #footer {
   background-color: #000;
   padding: 20px;
