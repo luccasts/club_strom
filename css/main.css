@@ -10,8 +10,11 @@
   --bg-secondary-color: ;
   --font-size-subtitle: ;
 
+  --secondary-color: #c49c51;
+
   --font-size-nav-link: 16px;
   --primary-text-color: #fff;
+
   --contato-text-color: var(--primary-text-color);
 
   --color-nav-link: #ffffff;
@@ -46,7 +49,12 @@ body main {
   flex-shrink: 1;
   flex-basis: 0;
 }
-
+header {
+  margin-bottom: 32px;
+}
+main {
+  margin-bottom: 32px;
+}
 .container {
   max-width: var(--max-width);
 }
@@ -61,7 +69,6 @@ body main {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  gap: 32px;
 }
 
 #nav-bar {
@@ -96,6 +103,8 @@ body main {
   transform: scaleX(1) scaleY(1.05);
   transform-origin: bottom left;
 }
+
+/*PAGINA INICIO*/
 #inicio {
   margin: 0 2rem;
 }
@@ -255,13 +264,16 @@ body main {
   align-items: center;
   gap: 32px;
   flex-wrap: wrap;
-  flex-direction: column;
 }
 #contato-titulo {
   text-transform: uppercase;
   color: var(--contato-text-color);
+  margin: 0 0 1rem 0;
 }
-
+#contato-imagem-logo {
+  max-width: 300px;
+  width: 100%;
+}
 .logo-contato {
   border-radius: 400px 400px 400px 400px;
   font-size: 2rem;
@@ -295,15 +307,18 @@ body main {
 
 #contato-container-wpp a p,
 #contato-container-instagram a p {
-  transition: transform 15ms;
+  transition: transform 0.2s ease;
 }
 #contato-container-wpp a p:hover,
 #contato-container-instagram a p:hover {
   transform: scale(1.02);
-  text-decoration: underline;
 }
 
 /*FOOTER */
+#footer {
+  background-color: #000;
+  padding: 20px;
+}
 #footer-flex {
   display: flex;
   justify-content: center;
@@ -312,6 +327,13 @@ body main {
   flex-wrap: wrap;
 }
 #footer-logo {
-  max-width: 300px;
+  max-width: 100px;
   width: 100%;
+}
+.logo-footer {
+  color: white;
+}
+
+#hr-footer {
+  height: 50px;
 }
