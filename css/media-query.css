@@ -1,0 +1,48 @@
+@media (max-width: 670px) {
+  @media (max-width: 670px) {
+    .logo-zap-body {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      padding: 0;
+      justify-content: center;
+      background-color: #25d366;
+      z-index: 9999;
+    }
+
+    .logo-zap-body #icone-wpp-header {
+      margin: 0;
+      transition: transform 0.3s ease;
+    }
+
+    .logo-zap-body::after {
+      content: "Agende agora!";
+      position: absolute;
+      right: 60px;
+      top: 50%;
+      transform: translateY(-50%) translateX(10px);
+      background-color: #25d366;
+      color: white;
+      font-weight: 600;
+      padding: 6px 12px;
+      border-radius: 20px;
+      white-space: nowrap;
+      opacity: 0;
+      pointer-events: none;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    .logo-zap-body:hover {
+      transform: translateX(-8px);
+    }
+
+    .logo-zap-body:hover::after {
+      opacity: 1;
+      transform: translateY(-50%) translateX(0);
+    }
+  }
+}

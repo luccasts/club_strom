@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap");
 /*coloquei outra fonte ai*/
 * {
   margin: 0;
@@ -11,13 +11,13 @@
   --bg-primary-color: ;
   --bg-secondary-color: ;
   --font-size-subtitle: ;
-
+  --primary-color: #fff;
   --secondary-color: #c49c51;
 
   --font-size-nav-link: 16px;
   --primary-text-color: #fff;
 
-  --contato-text-color: var(--primary-text-color);
+  --title-color: var(--primary-text-color);
 
   --color-nav-link: #ffffff;
   --color-footer-contatos: #ffff;
@@ -63,7 +63,14 @@ main {
 .container-margin {
   margin: 0 auto;
 }
-
+.borda-background {
+  background-image: url("../img/borda-altura-menor.png");
+  height: 45px;
+  width: 100%;
+  background-repeat: repeat-x;
+  background-size: 150px auto;
+  background-position: center;
+}
 .color-hr {
   border: 1px solid var(--hr-color);
 }
@@ -79,6 +86,7 @@ main {
   align-items: center;
   justify-content: space-around;
   gap: 16px;
+  flex-wrap: wrap;
 }
 #nav-bar a {
   color: var(--color-nav-link);
@@ -106,7 +114,6 @@ main {
   transform-origin: bottom left;
 }
 
-
 #inicio {
   margin: 0 2rem;
 }
@@ -125,7 +132,7 @@ main {
   width: 100%;
   z-index: -5;
   position: relative;
-  margin-bottom: 30px; 
+  margin-bottom: 30px;
 }
 #bg-inicio::before {
   content: "";
@@ -145,95 +152,61 @@ main {
   width: 100%;
 }
 .logo-zap-body {
-  width: 220px;
-  margin: 6px auto; 
-  background-color: #c49c51;
-  padding: 8px 12px;
+  background-color: #25d366;
+  padding: 6px 10px;
   border-radius: 30px;
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  gap: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
-.logo-zap {
-  position: relative;
-  display: flex;
-  align-items: center;
-  gap: 10px;
+.logo-zap-body #icone-wpp-header {
+  font-size: 32px;
+  transition: transform 0.3s ease;
+  color: var(--primary-color);
 }
 
-.logo-zap img {
-  width: 40px;
-  height: auto;
-  display: block;
-  margin: 0;
-  transition: transform 0.22s ease, filter 0.22s ease;
+.logo-zap-body::after {
+  content: "Agende agora!";
+  color: white;
+  font-weight: 600;
+  margin-left: 6px;
+  opacity: 1;
+  transform: translateX(0);
+  transition: all 0.3s ease;
 }
+
 .logo-zap-body:hover {
-  transform: scale(1.08);
-  filter: brightness(1.03);
+  transform: translateY(-5px);
 }
-.logo-zap-body:hover::after {
-  transform: scaleX(1) scaleY(1.05);
-  transform-origin: bottom left;
-}
-.borda-body {
-  -webkit-overflow-scrolling: touch;
-  padding: 0;                            
-  margin: 0;
-}
-
-.borda {
-  display: flex;
-  flex-wrap: nowrap;                     
-  align-items: center;
-  justify-content: center;               
-  gap: 6px;                            
-  padding: 6px 8px;
-}
-
-.borda img {
-  flex: 0 0 auto;                        
-  width: auto;
-  height: clamp(160px, 4.2vw, 48px);      
-  display: block;
-  margin: 0;
-  pointer-events: none;
-  z-index: 100;
-  margin-top: -150px;
-  margin-bottom: -80px;
-}
-
-
-.borda-body::-webkit-scrollbar { height: 8px; }
-.borda-body::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.2); border-radius: 8px; }
-
 /*vou ajeitar ainda essa parte*/
 .texto-fiel-container {
   width: 100%;
-  max-width: 700px;          
-  margin: 0 auto;             
+  max-width: 700px;
+  margin: 0 auto;
   display: flex;
-  align-items: center;       
-  justify-content: center;    
-  text-align: center;        
-  padding: 1rem;              
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1rem;
   font-family: Jacques Francois;
 }
 
-.texto-fiel p {
+.texto-fiel h2 {
   margin: 0;
-  font-size: clamp(1.1rem, 2.6vw, 1.6rem); 
+  font-size: clamp(1.1rem, 2.6vw, 1.6rem);
   line-height: 1.4;
   font-weight: 800;
   color: #ffffff93;
   letter-spacing: 0.2px;
 }
 
-
 .texto-fiel-container.center-vertical {
-  min-height: 140px; 
+  min-height: 140px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -256,8 +229,6 @@ main {
   margin: 1px auto;
   padding: 0.5rem 1rem;
   position: relative;
-
-  
 }
 
 .servicos-gallery img {
@@ -269,11 +240,23 @@ main {
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0);
   transition: transform 0.25s ease, filter 0.25s ease;
 
-  -webkit-mask-image: linear-gradient(90deg, transparent 0%, black 8%, black 92%, transparent 100%);
+  -webkit-mask-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    black 8%,
+    black 92%,
+    transparent 100%
+  );
   -webkit-mask-repeat: no-repeat;
   -webkit-mask-size: 100% 100%;
 
-  mask-image: linear-gradient(90deg, transparent 0%, rgb(0, 0, 0) 8%, black 92%, transparent 100%);
+  mask-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgb(0, 0, 0) 8%,
+    black 92%,
+    transparent 100%
+  );
   mask-repeat: no-repeat;
   mask-size: 100% 100%;
 }
@@ -306,16 +289,51 @@ main {
   border-radius: 8px;
 }
 
+/*INICIO PAGINA ESPAÇO*/
+#espaco {
+  margin: 32px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+#espaco h1 {
+  color: var(--title-color);
+  text-shadow: 1px 1px 1px #000000;
+  text-transform: uppercase;
+  text-align: center;
+}
+.main-carousel img {
+  border: 1px solid var(--secondary-color);
+}
+
+.mapa-frame /* MAPA*/ {
+  width: 100%;
+  max-width: 950px;
+  height: 450px;
+  border: none;
+  display: block;
+  margin: 0 auto;
+}
+#localizacao h2 {
+  color: var(--title-color);
+  font-size: 2rem;
+  text-transform: uppercase;
+  margin: 1rem 0;
+  text-align: center;
+}
+/*FIM PAGINA ESPAÇO*/
+/*INICIO PAGINA CONTATO*/
 #contato {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 32px;
   flex-wrap: wrap;
+  margin-top: 32px;
 }
 #contato-titulo {
   text-transform: uppercase;
-  color: var(--contato-text-color);
+  color: var(--title-color);
   margin: 0 0 1rem 0;
 }
 #contato-imagem-logo {
