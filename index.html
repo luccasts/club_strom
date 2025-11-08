@@ -5,12 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Barbearia</title>
     <link href="https://cdn.lineicons.com/5.0/lineicons.css" rel="stylesheet" />
-
+    <!--
+    Flickity CSS-->
+    <link rel="stylesheet" href="css/flickity.css" media="screen" />
     <link
       rel="stylesheet"
       href="https://necolas.github.io/normalize.css/8.0.1/normalize.css"
     />
     <link rel="stylesheet" href="css/main.css" />
+    <script src="js/a.js"></script>
   </head>
   <body class="body-flex">
     <header>
@@ -30,14 +33,14 @@
             <li><a class="nav-a-hover" href="#servicos">Serviços</a></li>
             <li><a class="nav-a-hover" href="#espaco">Espaço</a></li>
             <li><a class="nav-a-hover" href="#contato">Contato</a></li>
-    <section>
-      <div class="logo-zap-body">
-        <div class="logo-zap">
-          <img src="img/whatsap-logo.png" alt="" />
-          <p>Agende agora!</p>
-        </div>
-      </div>
-    </section>
+            <section>
+              <div class="logo-zap-body">
+                <div class="logo-zap">
+                  <img src="img/whatsap-logo.png" alt="" />
+                  <p>Agende agora!</p>
+                </div>
+              </div>
+            </section>
           </ul>
         </nav>
       </div>
@@ -87,9 +90,34 @@
             <figcaption>Texto em aberto</figcaption>
           </figure>
         </div>
-     </section>
+      </section>
       <section id="servicos" class="container-margin">Serviços</section>
       <section id="espaco" class="container-margin">
+        <h1>Espaço</h1>
+        <div class="main-carousel">
+          <div class="carousel-cell">
+            <img
+              width="200px"
+              src="img/carrousel_1.png"
+              alt="Imagem do espaço 1"
+            />
+          </div>
+          <div class="carousel-cell">
+            <img
+              width="200px"
+              height="300px"
+              src="img/carrousel_2.png"
+              alt="Imagem do espaço 2"
+            />
+          </div>
+          <div class="carousel-cell">
+            <img
+              width="200px"
+              src="img/carrousel_3.png"
+              alt="Imagem do espaço 3"
+            />
+          </div>
+        </div>
         <!-- <div class="container container-margin">
           <h1>Espaço</h1>
           <iframe
@@ -153,5 +181,14 @@
         </section>
       </div>
     </footer>
+    <script src="js/flickity.pkgd.min.js"></script>
+    <script>
+      var elem = document.querySelector(".main-carousel");
+      var flkty = new Flickity(elem, {
+        // options
+        cellAlign: "center",
+        contain: true,
+      });
+    </script>
   </body>
 </html>
