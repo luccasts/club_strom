@@ -31,34 +31,45 @@
     <header>
       <div id="div-header">
         <nav class="container container-margin">
-          <ul id="nav-bar">
-            <li>
-              <a href="#"
-                ><img
-                  width="100"
-                  src="img/club-strom.png"
-                  alt="Club Strom"
-                  id="logo-club-strom"
-              /></a>
-            </li>
-            <li><a class="nav-a-hover" href="#inicio">Inicio</a></li>
-            <li><a class="nav-a-hover" href="#servicos">Serviços</a></li>
-            <li><a class="nav-a-hover" href="#espaco">Espaço</a></li>
-            <li><a class="nav-a-hover" href="#contato">Contato</a></li>
-            <li>
-              <div class="logo-zap-body">
-                <div class="logo-zap">
-                  <a
-                    href="https://wa.me/75988093096"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <i id="icone-wpp-header" class="lni lni-whatsapp"></i
-                  ></a>
-                </div>
+          <div id="background-menu-toggle">
+            <div id="menu-toggle" class="menu-toggle">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+
+          <div id="nav-bar" class="nav-bar">
+            <a href="#" class="nav-logo">
+              <img
+                width="120"
+                src="img/club-strom.png"
+                alt="Club Strom"
+                id="logo-club-strom"
+              />
+            </a>
+
+            <ul class="nav-links">
+              <li><a class="nav-a-hover" href="#inicio">Início</a></li>
+              <li><a class="nav-a-hover" href="#servicos">Serviços</a></li>
+              <li><a class="nav-a-hover" href="#espaco">Espaço</a></li>
+              <li><a class="nav-a-hover" href="#contato">Contato</a></li>
+              <div>
+                <a
+                  href="https://wa.me/75988093096"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  id="texto-logo-wpp"
+                >
+                  <div class="logo-zap-body">
+                    <div class="logo-zap">
+                      <i id="icone-wpp-header" class="lni lni-whatsapp"></i>
+                    </div>
+                  </div>
+                </a>
               </div>
-            </li>
-          </ul>
+            </ul>
+          </div>
         </nav>
       </div>
       <hr class="color-hr" />
@@ -212,6 +223,6 @@
       </div>
     </footer>
     <script src="plugins/flickity/flickity.pkgd.min.js"></script>
-    <script src="js/carousel.js"></script>
+    <script src="js/main.js"></script>
   </body>
 </html>

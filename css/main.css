@@ -81,6 +81,14 @@ main {
 }
 
 #nav-bar {
+  padding-top: 1rem;
+  display: flex;
+  flex-direction: row;
+  gap: 64px;
+  justify-content: center;
+  align-items: center;
+}
+#nav-bar ul {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -150,6 +158,9 @@ main {
 #logo-club-branco {
   max-width: 500px;
   width: 100%;
+}
+#nav-bar #texto-logo-wpp {
+  text-transform: capitalize;
 }
 .logo-zap-body {
   background-color: #25d366;
