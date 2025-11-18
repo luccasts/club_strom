@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap");
 /*coloquei outra fonte ai*/
+
+
 * {
   margin: 0;
   padding: 0;
@@ -235,8 +237,8 @@ main {
 .servicos-gallery {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 0.5rem;
-  width: 100%;
+  gap: 1.5rem;
+  width: 99%;
   margin: 1px auto;
   padding: 0.5rem 1rem;
   position: relative;
@@ -270,17 +272,25 @@ main {
   );
   mask-repeat: no-repeat;
   mask-size: 100% 100%;
+  transition-duration: 0.5s;
 }
 
 .servicos-gallery img:hover {
-  transform: scale(1.02);
+  transform: scale(1.1); 
 }
 
 .servico-item {
   position: relative;
   overflow: hidden;
   border-radius: 12px;
+  transition-duration: 0.5s;
 }
+
+.servico-item:hover{
+  transform: scale(1.2);
+  transition-duration: 0.5s;
+}
+
 
 .servico-item figcaption {
   position: absolute;
@@ -296,8 +306,13 @@ main {
   text-align: center;
   white-space: nowrap;
   background: rgba(0, 0, 0, 0);
-  backdrop-filter: blur(1px);
   border-radius: 8px;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.servico-item:hover figcaption {
+  opacity: 0;
 }
 
 /*INICIO PAGINA ESPAÇO*/
