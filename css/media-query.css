@@ -150,4 +150,9 @@
   .nav-links li a:hover {
     background: #c49c51;
   }
+
+  /*CONTATO*/
+  #section-localizacao-contato {
+    flex-direction: column;
+  }
 }
