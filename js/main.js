@@ -4,6 +4,7 @@ var flkty = new Flickity(elem, {
   cellAlign: "center",
   contain: true,
   autoPlay: true,
+  imagesLoaded: true
 });
 
 /*MENU HAMBURGER */
